@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Kevins Unit Converter</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+			
+
+				<div id ="outside">
+				<p>Please select a calculator type.
+  <div id ="buttons">
+    <button type="button" class="btn btn-dark" data-toggle="button" aria-pressed="false" autocomplete="off" id ="mass" onclick ="mass()" >Mass Convertion</button>
+    <button type="button" class="btn btn-dark" data-toggle="button" aria-pressed="false" autocomplete="off" id ="dist" onclick ="dist()">Distance Convertion</button>
+	<button type="button" class="btn btn-dark" data-toggle="button" aria-pressed="false" autocomplete="off" id ="pressure" onclick ="pressure()">Pressure Convertion</button>
+  </div>
+  <div id="converter">
+    <div id="selectors">
+      <select class="custom-select" id ="convertFrom" onchange ="leftFunction(this.options[this.selectedIndex])" value ="Convert From" disabled >
+        <option selected disabled hidden>Convert From</option>
+        <!-- Mass units -->
+		<option value ="mg">Milligram</option>
+        <option value ="g">Gram</option>
+        <option value ="kg">Kilogram</option>
+        <option value ="t">Metric Tonne</option>
+        <option value ="gr">Grain</option>
+        <option value ="oz">Ounce</option>
+        <option value ="lb">Pound</option>
+        <option value ="ton">Ton</option>
+		<!-- Distance units -->
+        <option value ="mm">Millimeter</option>
+        <option value ="cm">Centimeter</option>
+        <option value ="m">Meter</option>
+        <option value ="km">Kilometer</option>
+        <option value ="in">Inch</option>
+        <option value ="ft">Feet</option>
+        <option value ="yd">Yard</option>
+        <option value ="mile">Mile</option>
+		<!-- Pressure units -->
+		<option value ="pa">Pascal</option>
+		<option value ="kpa">Kilopascal</option>
+		<option value ="bar">Bar</option>
+		<option value ="atm">Standard Atmosphere</option>
+		<option value ="torr">Torr (mmHg)</option>
+		<option value ="psi">PSI</option>
+      </select>
+	
+	
+      <select class="custom-select" id ="convertTo" disabled onchange ="rightFunction(this.options[this.selectedIndex])" value ="ConvertTo">
+        <option selected disabled hidden>Convert To</option>
+        <!-- Mass units -->
+		<option value ="mg">Milligram</option>
+        <option value ="g">Gram</option>
+        <option value ="kg">Kilogram</option>
+        <option value ="t">Metric Tonne</option>
+        <option value ="gr">Grain</option>
+        <option value ="oz">Ounce</option>
+        <option value ="lb">Pound</option>
+        <option value ="ton">Ton</option>
+		<!-- Distance units -->
+        <option value ="mm">Millimeter</option>
+        <option value ="cm">Centimeter</option>
+        <option value ="m">Meter</option>
+        <option value ="km">Kilometer</option>
+        <option value ="in">Inch</option>
+        <option value ="ft">Feet</option>
+        <option value ="yd">Yard</option>
+        <option value ="mile">Mile</option>
+		<!-- Pressure units -->
+		<option value ="pa">Pascal</option>
+		<option value ="kpa">Kilopascal</option>
+		<option value ="bar">Bar</option>
+		<option value ="atm">Standard Atmosphere</option>
+		<option value ="torr">Torr (mmHg)</option>
+		<option value ="psi">PSI</option>
+      </select>
+    </div>
+   
+    <div id ="layout">
+      <table style="width:100%">
+      <tr>
+        <th id ="leftTitle"></th>
+        <th id ="rightTitle"></th>
+      </tr>
+      <tr>
+		
+        <td id="first" >
+		<input class="form-control" type="text" id="convertFromVal" value =0></input>
+		<span id ="from"></span>
+		</td>
+        <div id ="second">
+		<td id="second">
+		<input class="form-control" type="text" id="convertToVal" value =0 readonly>
+		</input><span id ="to"></span></td>
+      </div>
+	  </tr>
+      <p id = "equals">
+	  </table>
+    </div>
+	<div id ="conver">
+      <button type="button" class="btn btn-dark js-tilt" data-toggle="button" aria-pressed="false" autocomplete="off" onclick ="convert()"id="convert">Convert</button>
+    </div>
+  </div>
+  </div>
+  
+		</div>
+		
+	</div>
+	</div>
+	</div>
+	</div>
+	
+	
+
+	
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
